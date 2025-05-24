@@ -1,0 +1,69 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# build and dist directories
+dist/
+build/
+coverage/
+
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+.env
+.eslintcache
+.idea/
+.nyc_output/
+.prettierignore
+.prettierrc
+.vscode/
+
+# Editor directories and files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# macOS specific files
+.DS_Store
+.Trashes
+._*
+
+# npm package manager
+.npm/
+
+# Yarn package manager
+.yarn/
+.pnp.*
+
+# Testing
+/coverage
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: If you use a specific bundler or build tool
+# For example, if you use Webpack:
+# webpack-bundle-analyzer/
+
+# Optional: If you have example or test data
+# /examples/data/
+# /test/fixtures/
+
+# Optional: If you have private configuration files
+# config/*.local.js
+# *.config.local.js

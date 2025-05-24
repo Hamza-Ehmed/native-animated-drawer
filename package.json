@@ -1,0 +1,25 @@
+{
+  "name": "react-native-animated-drawer",
+  "version": "1.0.0",
+  "description": "react-native-animated-drawer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hamza-Ehmed/npm-packager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hamza-Ehmed/react-native-animated-drawer/issues"
+  },
+  "homepage": "https://github.com/Hamza-Ehmed/react-native-animated-drawer#readme",
+  "dependencies": {
+    "metro-react-native-babel-preset": "^0.77.0",
+    "react-native-linear-gradient": "^2.8.3"
+  },
+  "devDependencies": {}
+}

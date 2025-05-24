@@ -1,0 +1,71 @@
+# Build artifacts
+/dist/
+/build/
+/es/
+/lib/
+/tmp/
+/out/
+/compiled/
+
+# Development and testing files
+/test/
+/tests/
+/spec/
+/examples/
+/coverage/
+.nyc_output/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Configuration files for development tools
+.vscode/
+.idea/
+.editorconfig
+.prettierrc
+.prettierignore
+.eslintrc.js
+.eslintignore
+tsconfig.json
+karma.conf.js
+webpack.config.js
+babel.config.js
+jest.config.js
+
+# Node.js specific
+*.tsbuildinfo
+*.js.map
+*.d.ts.map # If you generate .d.ts.map files and don't want them published
+*.tgz # npm pack output
+.env* # Environment variables
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Operating System files
+.DS_Store
+Thumbs.db
+.npmrc # Contains registry tokens, never publish!
+
+# CI/CD files
+.github/
+.travis.yml
+.gitlab-ci.yml
+Jenkinsfile
+
+# Documentation source (if generated documentation is published instead)
+docs/src/
+
+# Yarn specific
+.yarn/
+.pnp.*
+
+# Bundled dependencies are generally included, but if you have
+# specific node_modules you want to exclude *only* from the published package,
+# but still keep in your repo for dev, list them here.
+# Otherwise, node_modules is ignored by default by npm,
+# unless you specify them as bundledDependencies.
+# node_modules/
