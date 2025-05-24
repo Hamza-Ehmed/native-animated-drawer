@@ -203,5 +203,22 @@ export default function DrawerStackNavigation() {
 }
 ```
 
+### use context useDrawer to open drawer
+
+```jsx
+import React from 'react'
+import { Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { useDrawer } from 'native-animated-drawer'
+
+export default function Share({ navigation }) {
+        const { setIsDrawerOpen } = useDrawer()
+    return (
+        <TouchableOpacity style={styles.container} onPress={()=>{setIsDrawerOpen(true)}} >
+            <Text> Open drawer </Text>
+        </TouchableOpacity>
+    )
+}
+```
+
 
 
