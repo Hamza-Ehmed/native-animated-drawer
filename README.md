@@ -1,15 +1,15 @@
 
-# `Why we need react-native-animated-drawer`
+# `Why we need native-animated-drawer`
 
  @react-navigation/drawer is no longer working.even if it works its a huge pain in the ass.it has peer dependencies like react-native-reanimated which have their own compatibility problems.
- react-native-animated-drawer does not depend on react-native-reanimated. it is using Animated api from react directly.In conclusion react-native-animated-drawer will have long term stability.
+ native-animated-drawer does not depend on react-native-reanimated. it is using Animated api from react directly.In conclusion native-animated-drawer will have long term stability.
 
 
 # Preview
 coming soon
-# `react-native-animated-drawer`
+# `native-animated-drawer`
 
-[![npm version](https://badge.fury.io/js/react-native-animated-drawer.svg)](https://www.npmjs.com/package/react-native-animated-drawer)
+[![npm version](https://badge.fury.io/js/native-animated-drawer.svg)](https://www.npmjs.com/package/native-animated-drawer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A highly customizable and animated Drawer navigation component for React Native, designed to seamlessly integrate with `react-navigation`. Easily control its appearance, content, and behavior through a centralized Context API.
@@ -29,9 +29,9 @@ A highly customizable and animated Drawer navigation component for React Native,
 First, install the main package:
 
 ```bash
-npm install react-native-animated-drawer
+npm install native-animated-drawer
 # or
-yarn add react-native-animated-drawer
+yarn add native-animated-drawer
 ```
 
  ### Install peer dependencies
@@ -129,7 +129,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Home from '@views/Home/Home'
 import Share from '@views/Share/Share'
 import { routeData } from '../../../info/routeData'
-import { DrawerProvider, createDrawerScreen } from 'react-native-animated-drawer'
+import { DrawerProvider, createDrawerScreen } from 'native-animated-drawer'
 
 const Stack = createNativeStackNavigator()
 
@@ -185,7 +185,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Home from '@views/Home/Home'
 import Share from '@views/Share/Share'
 import { routeData } from '../../../info/routeData'
-import { DrawerProvider, createDrawerScreen } from 'react-native-animated-drawer'
+import { DrawerProvider, createDrawerScreen } from 'native-animated-drawer'
 
 const Stack = createNativeStackNavigator()
 
