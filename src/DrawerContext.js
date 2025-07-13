@@ -15,6 +15,12 @@ const DEFAULT_DRAWER_HEADER_STYLES = {
     headerBorderBottomColor: 'rgba(255, 255, 255, 0.2)',
 }
 
+const DEFAULT_DRAWER_HEADER_INFO = {
+    title: "Organization",
+    subtitle: "Awesome company",
+    image: "https://i.pravatar.cc/150?img=68"
+}
+
 const DEFAULT_LIST_ITEM_STYLES = {
     itemBgColor: 'rgba(255, 255, 255, 0.1)',
     itemTextColor: '#FFFFFF',
@@ -28,6 +34,7 @@ const DrawerContext = createContext({
     isDrawerOpen: false,
     setIsDrawerOpen: () => { },
     drawerStyles: DEFAULT_DRAWER_STYLES,
+    drawerHeaderInfo: DEFAULT_DRAWER_HEADER_INFO,
     drawerHeaderStyles: DEFAULT_DRAWER_HEADER_STYLES,
     listItemStyles: DEFAULT_LIST_ITEM_STYLES,
     drawerData: DEFAULT_DRAWER_DATA, // New: Default drawer data
@@ -36,35 +43,3 @@ const DrawerContext = createContext({
 // Custom hook to consume the context
 export const useDrawer = () => useContext(DrawerContext)
 
-// Provider component that accepts style props and drawerData
-export const DrawerProvider = ({
-    children,
-    // Accept style objects as props for customization
-    drawerStyles = {},
-    drawerHeaderStyles = {},
-    listItemStyles = {},
-    drawerData = DEFAULT_DRAWER_DATA, // New: Accept drawerData as a prop
-}) => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-
-    // Merge provided styles with defaults
-    const mergedDrawerStyles = { ...DEFAULT_DRAWER_STYLES, ...drawerStyles }
-    const mergedDrawerHeaderStyles = { ...DEFAULT_DRAWER_HEADER_STYLES, ...drawerHeaderStyles }
-    const mergedListItemStyles = { ...DEFAULT_LIST_ITEM_STYLES, ...listItemStyles }
-
-    const contextValue = {
-        isDrawerOpen,
-        setIsDrawerOpen,
-        // Provide merged styles through the context
-        drawerStyles: mergedDrawerStyles,
-        drawerHeaderStyles: mergedDrawerHeaderStyles,
-        listItemStyles: mergedListItemStyles,
-        drawerData, // New: Provide drawerData through the context
-    }
-
-    return (
-        <DrawerContext.Provider value={contextValue}>
-            {children}
-        </DrawerContext.Provider>
-    )
-}

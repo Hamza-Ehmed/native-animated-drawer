@@ -1,5 +1,5 @@
 // my-rn-custom-drawer/src/components/DrawerNavigator.js
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View, Dimensions, Animated, Image } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import Item from './Item'
@@ -9,18 +9,16 @@ const { width } = Dimensions.get('window')
 
 export default function DrawerNavigator({
     children,
-    // data prop is REMOVED from here, it comes from context
     navigation,
-    // Style props are REMOVED from here, they come from context
 }) {
-    // Get all necessary state, styles, AND data from context
     const {
         isDrawerOpen,
         setIsDrawerOpen,
         drawerStyles,
         drawerHeaderStyles,
+        drawerHeaderInfo,
         listItemStyles,
-        drawerData, // New: Get drawerData from context
+        drawerData,
     } = useDrawer()
 
     const drawerWidth = width * 0.75;
@@ -57,7 +55,7 @@ export default function DrawerNavigator({
             speed: 10,
         }).start(() => {
             setShouldRenderDrawer(false);
-            setIsDrawerOpen(false); // Update context state to close
+            setIsDrawerOpen(false);
         });
     };
 
@@ -83,16 +81,20 @@ export default function DrawerNavigator({
                         <View style={[screenStyles.drawerHeader, { borderBottomColor: drawerHeaderStyles.headerBorderBottomColor }]}>
                             <View style={[screenStyles.profileImageContainer, { backgroundColor: drawerHeaderStyles.headerProfileContainerBgColor }]}>
                                 <Image
-                                    source={{ uri: drawerHeaderStyles?.image || 'https://i.pravatar.cc/150?img=68' }}
+                                    source={{ uri: drawerHeaderInfo?.image }}
                                     style={screenStyles.profileImage}
                                 />
                             </View>
-                            <Text style={[screenStyles.userName, { color: drawerHeaderStyles.headerUserNameColor }]}> {drawerHeaderStyles?.title || 'Title'} </Text>
-                            <Text style={[screenStyles.eventsCount, { color: drawerHeaderStyles.headerEventsCountColor }]}> {drawerHeaderStyles?.subtitle || 'SSubtitle'} </Text>
+                            <Text style={[screenStyles.userName, { color: drawerHeaderStyles.headerUserNameColor }]}>
+                                {drawerHeaderInfo?.title}
+                            </Text>
+                            <Text style={[screenStyles.eventsCount, { color: drawerHeaderStyles.headerEventsCountColor }]}>
+                                {drawerHeaderInfo?.subtitle}
+                            </Text>
                         </View>
 
                         <FlatList
-                            data={drawerData} // New: Use data from context
+                            data={drawerData}
                             renderItem={({ item }) => (
                                 <Item
                                     navigation={navigation}
@@ -123,7 +125,7 @@ const screenStyles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#F8F8F8', // For the main content area
+        backgroundColor: '#F8F8F8',
     },
     overlayer: {
         position: 'absolute',
